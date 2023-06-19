@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="95bb8995abcb481d9a6298ecd5b9ab30" Name="Diagram1">
+        <EntityTypeShape EntityType="fishMarketModel.sysdiagrams" Width="1.5" PointX="0.75" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="fishMarketModel.Заказ" Width="1.5" PointX="5.25" PointY="1.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="fishMarketModel.Корзина" Width="1.5" PointX="5.25" PointY="4.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="fishMarketModel.Пользователь" Width="1.5" PointX="3" PointY="2.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="fishMarketModel.Тип_пользователь" Width="1.5" PointX="0.75" PointY="3" IsExpanded="true" />
+        <EntityTypeShape EntityType="fishMarketModel.Товар" Width="1.5" PointX="5.25" PointY="7.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="fishMarketModel.Товар_заказа" Width="1.5" PointX="7.5" PointY="1.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="fishMarketModel.Товар_корзина" Width="1.5" PointX="7.5" PointY="5" IsExpanded="true" />
+        <AssociationConnector Association="fishMarketModel.FK_Заказ_Пользователь" ManuallyRouted="false" />
+        <AssociationConnector Association="fishMarketModel.FK_Товар_заказа_Заказ" ManuallyRouted="false" />
+        <AssociationConnector Association="fishMarketModel.FK_Корзина_Пользователь" ManuallyRouted="false" />
+        <AssociationConnector Association="fishMarketModel.FK_Товар_корзина_Корзина" ManuallyRouted="false" />
+        <AssociationConnector Association="fishMarketModel.FK_Пользователь_Тип_пользователь" ManuallyRouted="false" />
+        <AssociationConnector Association="fishMarketModel.FK_Товар_заказа_Товар" ManuallyRouted="false" />
+        <AssociationConnector Association="fishMarketModel.FK_Товар_корзина_Товар" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

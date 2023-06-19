@@ -1,0 +1,60 @@
+﻿<Page x:Class="MagazineApps.Page_.PageZakaz"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:MagazineApps.Page_"
+      mc:Ignorable="d" 
+     d:DesignHeight="750" d:DesignWidth="900"
+      Title="PageKorzina">
+
+    <Grid Background="White">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="50"/>
+        </Grid.RowDefinitions>
+
+        <Grid Grid.Row="0">
+            <TextBlock Text="ЗАКАЗЫ" Height="20" Width="100" FontSize="18" TextAlignment="Center" VerticalAlignment="Center"/>
+        </Grid>
+
+        <DataGrid Name="DGridZakaz" SelectionChanged="DGridZakaz_SelectionChanged" Grid.Row="1" AutoGenerateColumns="False" CanUserAddRows="False" CanUserDeleteRows="False">
+            <DataGrid.Columns>
+                <DataGridTemplateColumn>
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <StackPanel Orientation="Horizontal">
+                                <StackPanel Width="200">
+                                    <TextBlock Text="ID пользователя" Width="150" TextAlignment="Center"/>
+                                    <TextBlock Text="{Binding ID_Пользователь}" Width="150" TextAlignment="Center" TextTrimming="WordEllipsis" Margin="0 0 0 20"/>
+                                    <TextBlock Text="Сумма заказа:" Width="150" TextAlignment="Center"/>
+                                    <TextBlock Text="{Binding Сумма}" Width="auto" TextAlignment="Center"/>
+                                </StackPanel>
+                                <StackPanel Width="700">
+
+                                    <DataGrid Name="DGridZakTov" ItemsSource="{Binding Товар_заказа}" Height="200" Width="700" AutoGenerateColumns="False" CanUserAddRows="False" CanUserDeleteRows="False">
+                                        <DataGrid.Columns>
+                                            <DataGridTextColumn Header="Наименование" FontSize="18" Binding="{Binding ID_Товар}" Width="auto"/>
+                                            <DataGridTextColumn Header="Цена" FontSize="18" Binding="{Binding Колличество}" Width="auto"/>
+                                            <DataGridTextColumn Header="Количество" FontSize="18" Binding="{Binding Цена}" Width="auto"/>
+                                        </DataGrid.Columns>
+                                    </DataGrid>
+                                    
+                                </StackPanel>
+                            </StackPanel>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+            </DataGrid.Columns>
+        </DataGrid>
+
+        <Grid Grid.Row="2">
+            <Button Name="TB_exit" Click="TB_exit_Click" Content="Вернуться на главную" Width="150" Height="25" HorizontalAlignment="Left" Margin="30 0 0 0"/>
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
+                <Button Content="Обработать" Width="100" Height="25" Margin="0 0 30 0"/>
+            </StackPanel>
+        </Grid>
+
+    </Grid>
+</Page>
